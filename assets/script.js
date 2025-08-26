@@ -18,6 +18,7 @@ const slides = [
 	}
 ]
 
+
 // 2. Sélection DOM
 const bannerImg = document.querySelector(".banner-img");
 const leftArrow = document.querySelector(".arrow_left");
@@ -25,11 +26,14 @@ const rightArrow = document.querySelector(".arrow_right");
 const dots = Array.from(document.querySelectorAll(".dots .dot"));
 const tagLine = document.querySelector("span");
 
+
 // 3. Variable globales
 const basePath = "./assets/images/slideshow/";
 let index = 0;
 
+
 // 4. Fonction render (afficher img + texte + dots)
+
 	// a. évite un doublon
 function render() {
 	console.log ("===RENDER===");
@@ -62,6 +66,7 @@ function render() {
 });
 }
 
+
 // 5. Fonctions navigation 
 function prev(){
 	console.log("===PREV===");
@@ -86,6 +91,7 @@ function goTo(i) {
 	render();
 }
 
+
 // 6. Evènements
 leftArrow.addEventListener("click", () => {
 	console.log("Clic flèche GAUCHE");
@@ -103,3 +109,8 @@ dots.forEach((dot, i) => {
 		goTo(i);
 	});
 });
+
+
+// 7. Premier lancement
+console.log("===LANCEMENT DU CARROUSEL===");
+render()
