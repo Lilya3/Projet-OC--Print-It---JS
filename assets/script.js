@@ -43,9 +43,19 @@ function render() {
 	else{
 		console.log ("Aucun changement effectué (même image)");
 	}
+
+	dots.forEach((dot, i) => {
+	if (i === index){
+		console.log("Dot actif :", i);
+		dot.classList.add("dot_selected");
+	}
+	else{
+		dot.classList.remove("dot_selected");
+	}
+});
 }
 
-// 5. Fonctions navigation flèches
+// 5. Fonctions navigation 
 function prev(){
 	console.log("===PREV===");
 	console.log("Ancien index :", index);
@@ -53,11 +63,6 @@ function prev(){
 	console.log("Nouvel index", index);
 	render()
 }
-
-leftArrow.addEventListener("click", () => {
-	console.log("Clic flèche GAUCHE");
-	prev()
-})
 
 function next(){
 	console.log("===NEXT===");
@@ -67,8 +72,30 @@ function next(){
 	render();
 }
 
+function goTo(i) {
+	console.log("===GO TO DOT===");
+	console.log("Ancien index :", index, "Nouvel index", i);
+	index = i;
+	render();
+}
+
+// 6. Evènements
+leftArrow.addEventListener("click", () => {
+	console.log("Clic flèche GAUCHE");
+	prev();
+})
+
 rightArrow.addEventListener("click",() => {
 	console.log("Clic flèche DROITE");
 	next();
 })
+
+dots.forEach((dot, i) => {
+	dot.addEventListener("click", () => {
+		console.log("clic sur DOT numéro :", i);
+		goTo(i);
+	});
+});
+
+// 7. Dot -> activer le bon dot, désactiver les autres
 
