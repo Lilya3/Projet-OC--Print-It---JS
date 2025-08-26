@@ -38,6 +38,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	position: absolute;
+	z-index: -2;
 }
 ol, ul {
 	list-style: none;
@@ -141,8 +143,8 @@ header {
 }
 .dot {
 	margin-inline: 5px;
-	width: 13px;
-	height: 13px;
+	width: 18px;
+	height: 18px;
 	background-color: #ffffff00;
 	border: 3px solid #fff;
 	border-radius: 100%;
