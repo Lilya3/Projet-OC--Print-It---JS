@@ -23,12 +23,14 @@ const bannerImg = document.querySelector(".banner-img");
 const leftArrow = document.querySelector(".arrow_left");
 const rightArrow = document.querySelector(".arrow_right");
 const dots = Array.from(document.querySelectorAll(".dots .dot"));
+const tagLine = document.querySelector("span");
 
 // 3. Variable globales
 const basePath = "./assets/images/slideshow/";
 let index = 0;
 
-// 4. Fonction (afficher img + texte + dots)
+// 4. Fonction render (afficher img + texte + dots)
+	// a. évite un doublon
 function render() {
 	console.log ("===RENDER===");
 	console.log ("Index actuel :", index);
@@ -44,6 +46,11 @@ function render() {
 		console.log ("Aucun changement effectué (même image)");
 	}
 
+	// b. tagLine span : changement de texte
+	console.log('Texte :', slides[index].tagLine);
+	tagLine.innerHTML = slides[index].tagLine;
+
+	// c. Dots : activer le bon, désactiver les autres
 	dots.forEach((dot, i) => {
 	if (i === index){
 		console.log("Dot actif :", i);
@@ -96,6 +103,3 @@ dots.forEach((dot, i) => {
 		goTo(i);
 	});
 });
-
-// 7. Dot -> activer le bon dot, désactiver les autres
-
