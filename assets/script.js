@@ -1,3 +1,4 @@
+// 1. Data
 const slides = [
 	{
 		"image":"slide1.jpg",
@@ -16,3 +17,32 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+
+// 2. Sélection DOM
+const bannerImg = document.querySelector(".banner-img");
+const leftArrow = document.querySelector(".arrow_left");
+const rightArrow = document.querySelector(".arrow_right");
+const dots = Array.from(document.querySelectorAll(".dots .dot"));
+
+// 3. Variable globales
+const basePath = "./assets/images/slideshow/";
+let index = 0;
+
+// 4. Fonction (afficher img + texte + dots)
+function render() {
+	console.log ("===RENDER===");
+	console.log ("Index actuel :", index);
+	console.log ("image à afficher :", slides[index].image);
+	const targetSrc = basePath + slides[index].image;
+
+	if (bannerImg.getAttribute("src") !== targetSrc){
+		console.log ("changement d'image");
+		bannerImg.setAttribute("src", targetSrc);
+	}
+
+	else{
+		console.log ("Aucun changement effectué (même image)");
+	}
+}
+
+
