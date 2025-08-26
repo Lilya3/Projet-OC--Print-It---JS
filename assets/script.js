@@ -45,4 +45,30 @@ function render() {
 	}
 }
 
+// 5. Fonctions navigation flèches
+function prev(){
+	console.log("===PREV===");
+	console.log("Ancien index :", index);
+	index = (index - 1 + slides.length) % slides.length;
+	console.log("Nouvel index", index);
+	render()
+}
+
+leftArrow.addEventListener("click", () => {
+	console.log("Clic flèche GAUCHE");
+	prev()
+})
+
+function next(){
+	console.log("===NEXT===");
+	console.log("Ancien index :", index);
+	index = (index + 1) % slides.length;
+	console.log("Nouvel index :", index);
+	render();
+}
+
+rightArrow.addEventListener("click",() => {
+	console.log("Clic flèche DROITE");
+	next();
+})
 
