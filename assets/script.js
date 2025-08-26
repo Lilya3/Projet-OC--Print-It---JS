@@ -30,6 +30,7 @@ const tagLine = document.querySelector("span");
 // 3. Variable globales
 const basePath = "./assets/images/slideshow/";
 let index = 0;
+let timer = null;
 
 
 // 4. Fonction render (afficher img + texte + dots)
@@ -110,7 +111,22 @@ dots.forEach((dot, i) => {
 	});
 });
 
+// 7. Autoplay Carrousel
+function startAutoplay(intervalMS = 3000){
+	console.log("===START AUTOPLAY=== toutes les", intervalMS, "ms");
+	stopAutoplay();
+	timer = setInterval(() => {next(); }, intervalMS);
+}
 
-// 7. Premier lancement
+function stopAutoplay(){
+	if (timer){
+		console.log("===STOP AUTOPLAY");
+		clearInterval(timer);
+		timer = null;
+	}
+}
+
+// 8. Premier lancement
 console.log("===LANCEMENT DU CARROUSEL===");
 render()
+startAutoplay(3000);
