@@ -96,11 +96,13 @@ function goTo(i) {
 // 6. Evènements
 leftArrow.addEventListener("click", () => {
 	console.log("Clic flèche GAUCHE");
+	stopAutoplay();
 	prev();
 })
 
 rightArrow.addEventListener("click",() => {
 	console.log("Clic flèche DROITE");
+	stopAutoplay();
 	next();
 })
 
@@ -108,6 +110,7 @@ dots.forEach((dot, i) => {
 	dot.addEventListener("click", () => {
 		console.log("clic sur DOT numéro :", i);
 		goTo(i);
+		stopAutoplay();
 	});
 });
 
