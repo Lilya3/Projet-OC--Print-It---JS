@@ -55,9 +55,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/*body {
-}		??? Deux body ???
-*/
 
 section {
 	margin-block: 6em;
@@ -147,7 +144,6 @@ header {
 }
 .dot {
 	margin-inline: 5px;
-	width: 18px;
 	height: 18px;
 	background-color: #ffffff00;
 	border: 3px solid #fff;

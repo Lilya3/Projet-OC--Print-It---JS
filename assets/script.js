@@ -23,7 +23,7 @@ const slides = [
 const bannerImg = document.querySelector(".banner-img");
 const leftArrow = document.querySelector(".arrow_left");
 const rightArrow = document.querySelector(".arrow_right");
-const dots = Array.from(document.querySelectorAll(".dots .dot"));
+const dots = Array.from(document.querySelectorAll(".dot"));
 const tagLine = document.querySelector("span");
 
 
